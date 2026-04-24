@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
 const TALLY_FORM_URL = "https://tally.so/embed/A7qM9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+const STRIPE_LINK = "https://buy.stripe.com/eVq7sLf5C4Bm5DI8YB0kE02";
 
 const COMPASS = {
   fire: {
@@ -400,6 +401,14 @@ export default function App() {
               <button style={styles.linkBtn} onClick={() => navigate("breath")}>Void Breath</button>
             </div>
 
+            <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" style={{
+              display: "inline-block", padding: "14px 32px", background: "rgba(212,165,116,0.15)",
+              border: "1px solid #d4a574", color: "#d4a574", fontSize: "12px",
+              fontFamily: "sans-serif", letterSpacing: "0.15em", textTransform: "uppercase",
+              textDecoration: "none", borderRadius: "6px", marginBottom: "8px", textAlign: "center",
+            }}>Join the Weekly Dojo &mdash; $27/month</a>
+            <p style={{ fontSize: "10px", color: "#666", fontStyle: "italic", marginBottom: "20px" }}>Founding member rate. Locks in.</p>
+
             <p style={styles.footerText}>A Djedi Dojo Experience &middot; DjediDojo.com</p>
             <button style={styles.signOutBtn} onClick={signOut}>sign out</button>
           </div>
@@ -547,6 +556,24 @@ export default function App() {
               <p style={{ ...styles.aboutPara, fontStyle: "italic", color: "#666" }}>
                 Once installed, SOLO Dojo opens like a native app.
               </p>
+            </div>
+
+            <div style={{ ...styles.accentLine, margin: "24px auto" }} />
+
+            <div style={styles.aboutSection}>
+              <h3 style={styles.aboutSectionTitle}>Join the Weekly Dojo</h3>
+              <p style={styles.aboutPara}>
+                The app is free. The weekly live practice is where the compass comes alive. Every Tuesday at 7pm CST / 5pm PST, we meet in the dojo. Breath. Teaching. Prompt. Writing. Sharing. Witnessing.
+              </p>
+              <div style={{ textAlign: "center", margin: "20px 0" }}>
+                <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" style={{
+                  display: "inline-block", padding: "14px 32px", background: "#d4a574",
+                  color: "#0d0d0f", fontSize: "12px", fontFamily: "sans-serif",
+                  letterSpacing: "0.15em", textTransform: "uppercase", textDecoration: "none",
+                  borderRadius: "6px", fontWeight: "600",
+                }}>Join SOLO Dojo &mdash; $27/month</a>
+              </div>
+              <p style={{ fontSize: "12px", fontStyle: "italic", color: "#666", textAlign: "center" }}>Founding member rate. Locks in.</p>
             </div>
 
             <div style={{ ...styles.accentLine, margin: "24px auto" }} />
@@ -797,4 +824,3 @@ const styles = {
   journalPrompt: { fontSize: "12px", color: "#777", fontStyle: "italic", marginBottom: "8px" },
   journalText: { fontSize: "13px", color: "#bbb", lineHeight: 1.6 },
 };
-
