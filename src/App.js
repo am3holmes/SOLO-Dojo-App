@@ -678,7 +678,7 @@ export default function App() {
               {TIER_LABELS[activeTier]}
             </div>
             <div style={styles.accentLine} />
-            <textarea style={styles.textarea} placeholder="Begin writing\u2026" value={journalText} onChange={e => setJournalText(e.target.value)} rows={8} />
+            <textarea style={styles.textarea} placeholder="Begin writing..." value={journalText} onChange={e => setJournalText(e.target.value)} rows={8} />
             <button
               style={{ ...styles.saveBtn, background: journalText.trim() ? compass.color : "#333", cursor: journalText.trim() ? "pointer" : "default" }}
               onClick={saveEntry} disabled={!journalText.trim()}
