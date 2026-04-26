@@ -406,8 +406,8 @@ export default function App() {
               border: "1px solid #d4a574", color: "#d4a574", fontSize: "12px",
               fontFamily: "sans-serif", letterSpacing: "0.15em", textTransform: "uppercase",
               textDecoration: "none", borderRadius: "6px", marginBottom: "8px", textAlign: "center",
-            }}>Join the Weekly Dojo &mdash; $27/month</a>
-            <p style={{ fontSize: "10px", color: "#666", fontStyle: "italic", marginBottom: "20px" }}>Founding member rate. Locks in.</p>
+            }}>Join the Weekly Dojo &mdash; Tuesdays 7pm CST</a>
+            <p style={{ fontSize: "10px", color: "#666", fontStyle: "italic", marginBottom: "20px" }}>$27/month &middot; Founding member rate &middot; Replays available</p>
 
             <p style={styles.footerText}>A Djedi Dojo Experience &middot; DjediDojo.com</p>
             <button style={styles.signOutBtn} onClick={signOut}>sign out</button>
@@ -563,7 +563,7 @@ export default function App() {
             <div style={styles.aboutSection}>
               <h3 style={styles.aboutSectionTitle}>Join the Weekly Dojo</h3>
               <p style={styles.aboutPara}>
-                The app is free. The weekly live practice is where the compass comes alive. Every Tuesday at 7pm CST / 5pm PST, we meet in the dojo. Breath. Teaching. Prompt. Writing. Sharing. Witnessing.
+                The app is free. The weekly live practice is where the compass comes alive. Every Tuesday at 7pm CST / 5pm PST, we meet in the dojo. Breath. Teaching. Prompt. Writing. Sharing. Witnessing. Replays are always available if you can't make it live.
               </p>
               <div style={{ textAlign: "center", margin: "20px 0" }}>
                 <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" style={{
@@ -573,7 +573,7 @@ export default function App() {
                   borderRadius: "6px", fontWeight: "600",
                 }}>Join SOLO Dojo &mdash; $27/month</a>
               </div>
-              <p style={{ fontSize: "12px", fontStyle: "italic", color: "#666", textAlign: "center" }}>Founding member rate. Locks in.</p>
+              <p style={{ fontSize: "12px", fontStyle: "italic", color: "#666", textAlign: "center" }}>Founding member rate &middot; Replays available</p>
             </div>
 
             <div style={{ ...styles.accentLine, margin: "24px auto" }} />
@@ -643,26 +643,15 @@ export default function App() {
             {TIERS.map((tier) => {
               const prompts = compass[tier];
               if (!prompts) return null;
-              const isLocked = tier !== "sparks";
               return (
                 <div key={tier} style={styles.tierSection}>
-                  <div style={{ ...styles.tierLabel, background: isLocked ? "#444" : compass.color }}>
-                    {TIER_LABELS[tier]}{isLocked ? " — Members" : ""}
+                  <div style={{ ...styles.tierLabel, background: compass.color }}>
+                    {TIER_LABELS[tier]}
                   </div>
                   {prompts.map((p, i) => {
                     const isObj = typeof p === "object";
                     return (
-                      <button key={i} style={{
-                        ...styles.promptBtn,
-                        opacity: isLocked ? 0.45 : 1,
-                        position: "relative",
-                      }} onClick={() => isLocked ? window.open(STRIPE_LINK, '_blank') : navigate("prompt", activeDir, tier, p)}>
-                        {isLocked && <span style={{
-                          position: "absolute", top: "8px", right: "10px",
-                          fontSize: "9px", color: "#d4a574", fontFamily: "sans-serif",
-                          letterSpacing: "0.1em", textTransform: "uppercase",
-                          background: "rgba(212,165,116,0.1)", padding: "2px 8px", borderRadius: "10px",
-                        }}>Join</span>}
+                      <button key={i} style={styles.promptBtn} onClick={() => navigate("prompt", activeDir, tier, p)}>
                         {isObj && <span style={styles.promptTitle}>{p.title}</span>}
                         <span style={styles.promptText}>{isObj ? p.prompt.slice(0, 80) + "..." : p}</span>
                       </button>
