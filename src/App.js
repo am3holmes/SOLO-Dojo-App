@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
 const TALLY_FORM_URL = "https://tally.so/embed/A7qM9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
-const STRIPE_LINK = "https://buy.stripe.com/eVq7sLf5C4Bm5DI8YB0kE02";
+const STRIPE_LINK = "https://buy.stripe.com/cNi5kDbTq1pad6aa2F0kE03";
 
 const COMPASS = {
   fire: {
@@ -407,7 +407,7 @@ export default function App() {
               fontFamily: "sans-serif", letterSpacing: "0.15em", textTransform: "uppercase",
               textDecoration: "none", borderRadius: "6px", marginBottom: "8px", textAlign: "center",
             }}>Join the Weekly Dojo &mdash; Tuesdays 7pm CST</a>
-            <p style={{ fontSize: "10px", color: "#666", fontStyle: "italic", marginBottom: "20px" }}>$27/month &middot; Founding member rate &middot; Replays available</p>
+            <p style={{ fontSize: "10px", color: "#666", fontStyle: "italic", marginBottom: "20px" }}>$47/month &middot; Founding member rate &middot; Replays available</p>
 
             <p style={styles.footerText}>A Djedi Dojo Experience &middot; DjediDojo.com</p>
             <button style={styles.signOutBtn} onClick={signOut}>sign out</button>
@@ -571,7 +571,7 @@ export default function App() {
                   color: "#0d0d0f", fontSize: "12px", fontFamily: "sans-serif",
                   letterSpacing: "0.15em", textTransform: "uppercase", textDecoration: "none",
                   borderRadius: "6px", fontWeight: "600",
-                }}>Join SOLO Dojo &mdash; $27/month</a>
+                }}>Join SOLO Dojo &mdash; $47/month</a>
               </div>
               <p style={{ fontSize: "12px", fontStyle: "italic", color: "#666", textAlign: "center" }}>Founding member rate &middot; Replays available</p>
             </div>
